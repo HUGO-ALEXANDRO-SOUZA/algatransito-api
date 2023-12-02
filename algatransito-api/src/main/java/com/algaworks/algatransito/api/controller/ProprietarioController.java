@@ -21,7 +21,7 @@ public class ProprietarioController {
     }
 
     @GetMapping("/{proprietarioId}")
-    public ResponseEntity<Proprietario>buscar(@PathVariable Long proprietarioId) {
+    public ResponseEntity<Proprietario> buscar(@PathVariable Long proprietarioId) {
         return proprietarioRepository.findById(proprietarioId)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
@@ -31,5 +31,20 @@ public class ProprietarioController {
     @ResponseStatus(HttpStatus.CREATED)
     public Proprietario adicionar(@RequestBody Proprietario proprietario) {
         return proprietarioRepository.save(proprietario);
+    }
+
+    @PutMapping("/{proprietarioId}")
+    public ResponseEntity<Proprietario> atualizar (
+            @PathVariable Long proprietarioId, @RequestBody Proprietario proprietario) {
+
+        if (!proprietarioRepository.existsById(proprietarioId)) {
+            return  ResponseEntity.notFound().build();
+        }
+
+        proprietario.setId(proprietarioId);
+        Proprietario proprietarioAtualizado = proprietarioRepository.save(proprietario);
+
+        return ResponseEntity.ok(proprietarioAtualizado);
+
     }
 }
