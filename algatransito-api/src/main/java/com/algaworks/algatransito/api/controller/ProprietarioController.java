@@ -40,7 +40,6 @@ public class ProprietarioController {
         if (!proprietarioRepository.existsById(proprietarioId)) {
             return  ResponseEntity.notFound().build();
         }
-
         proprietario.setId(proprietarioId);
         Proprietario proprietarioAtualizado = proprietarioRepository.save(proprietario);
 
@@ -53,7 +52,6 @@ public class ProprietarioController {
         if (!proprietarioRepository.existsById(proprietarioId)) {
             return ResponseEntity.notFound().build();
         }
-
         proprietarioRepository.deleteById(proprietarioId);
         return ResponseEntity.noContent().build();
     }
