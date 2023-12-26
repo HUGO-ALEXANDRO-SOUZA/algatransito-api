@@ -3,6 +3,7 @@ package com.algaworks.algatransito.domain.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -15,6 +16,7 @@ import lombok.Setter;
 @Entity
 public class Proprietario {
 
+    @NotNull
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,6 +31,7 @@ public class Proprietario {
     @Email
     private String email;
 
+    @NotBlank
     @Column(name = "FONE")
     private String telefone;
 }
