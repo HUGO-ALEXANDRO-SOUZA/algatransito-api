@@ -1,6 +1,8 @@
 package com.algaworks.algatransito.api.exceptionhandler;
 
 import com.algaworks.algatransito.domain.exception.NegocioException;
+import lombok.AllArgsConstructor;
+import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatusCode;
@@ -15,8 +17,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.net.URI;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
-
+@AllArgsConstructor
 @RestControllerAdvice
 public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
 
@@ -30,7 +33,8 @@ public class ApiExceptionHandler extends ResponseEntityExceptionHandler {
         Map<String, String> fields = ex.getBindingResult().getAllErrors()
                 .stream()
                 .collect(Collectors.toMap(objectError -> ((FieldError) objectError).getField(),
-                        DefaultMessageSourceResolvable::getDefaultMessage));
+                        objectError -> Objects.requireNonNull(getMessageSource()).
+                                getMessage(objectError, LocaleContextHolder.getLocale())));
 
         problemDetail.setProperty("fields", fields);
 
