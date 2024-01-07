@@ -1,5 +1,6 @@
 package com.algaworks.algatransito.domain.model;
 
+import com.algaworks.algatransito.domain.exception.NegocioException;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -45,4 +46,31 @@ public class Veiculo {
         getAutuacoes().add(novaAutuacao);
         return novaAutuacao;
     }
+
+    public void apreender() {
+        if (estaApreendido()) {
+            throw new NegocioException("Veiculo ja se encontra apreendido");
+        }
+
+        setStatus(StatusVeiculo.APREENDIDO);
+        setDataApreensao(OffsetDateTime.now());
+    }
+
+    public boolean estaApreendido() {
+        return StatusVeiculo.APREENDIDO.equals(getStatus());
+    }
+
+    public void removerApreensao() {
+        if (naoEstaApreendido()) {
+            throw new NegocioException("Veiculo nao esta apreendido");
+        }
+
+        setStatus(StatusVeiculo.REGULAR);
+        setDataApreensao(null);
+    }
+
+    public boolean naoEstaApreendido() {
+        return !estaApreendido();
+    }
+
 }
