@@ -1,0 +1,26 @@
+{
+	"info": {
+		"_postman_id": "17d2fc45-6718-4873-b66c-4595e57b0bc6",
+		"name": "Autuacoes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28721474"
+	},
+	"item": [
+		{
+			"name": "Autuacoes - Adicionar",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Autuacoes - Listar",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

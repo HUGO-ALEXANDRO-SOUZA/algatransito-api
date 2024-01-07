@@ -1,0 +1,137 @@
+{
+	"info": {
+		"_postman_id": "fbf6ceec-3bc6-4174-9d68-00bc4b70c495",
+		"name": "Proprietários",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28721474"
+	},
+	"item": [
+		{
+			"name": "Proprietários - Listar",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/proprietarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proprietarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Proprietários - Buscar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/proprietarios/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proprietarios",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Proprietários - Adicionar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"nome\": \"Nala Vitoria\",\n        \"email\": \"hugo.a.dev2@gmail.com\",\n        \"telefone\": \"12996120589\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/proprietarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proprietarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Proprietários - Atualizar",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Nala Vitoria Souza souza\",\n    \"email\": \"hugo.a.dev2@gmail.com\",\n    \"telefone\": \"12996120589\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/proprietarios/7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proprietarios",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Proprietários - Deletar",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"Nala Vitória Souza\",\n    \"email\": \"nala@gmail.com\",\n    \"telefone\": \"12996120289\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/proprietarios/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proprietarios",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

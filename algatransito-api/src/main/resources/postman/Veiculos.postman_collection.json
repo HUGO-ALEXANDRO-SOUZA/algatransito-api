@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "92cf08ec-31e9-43e0-bf47-fed46b4e2fb0",
+		"name": "Veiculos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28721474"
+	},
+	"item": [
+		{
+			"name": "Veiculos - Listar",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/proprietarios",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proprietarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Veiculos - Apreender",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/veiculos/1/apreensao",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veiculos",
+						"1",
+						"apreensao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Veiculos - Remover apreensao",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/xml",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/veiculos/1/apreensao",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veiculos",
+						"1",
+						"apreensao"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Veiculos - Buscar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/proprietarios/4",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proprietarios",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Veiculos - Adicionar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"proprietario\": {\n        \"id\": 1\n    },\n    \"marca\": \"BMW\",\n    \"modelo\": \"M5\",\n    \"placa\": \"EXU5464\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/veiculos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"veiculos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
